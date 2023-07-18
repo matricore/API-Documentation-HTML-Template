@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>W3 Labs Client Api- Documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/hightlightjs-dark.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style.css" media="all">
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<div class="left-menu">
+    <div class="content-logo">
+        <div class="logo">
+            <span>W3 Labs Client Api Documentation</span>
+        </div>
+        <button class="burger-menu-icon" id="button-menu-mobile">
+            <svg width="34" height="34" viewBox="0 0 100 100"><path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"></path><path class="line line2" d="M 20,50 H 80"></path><path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"></path></svg>
+        </button>
+    </div>
+    <div class="mobile-menu-closer"></div>
+    <div class="content-menu">
+        <div class="content-infos">
+            <div class="info"><b>Version:</b> 1.0.5</div>
+            <div class="info"><b>Last Updated:</b> 15th July, 2023</div>
+        </div>
+        <ul>
+
+            <li class="scroll-to-link" data-target="content-user-create">
+                <a>user/create</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-user-authenticate">
+                <a>user/authenticate</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-customer-balance-all">
+                <a>customer/balance/all</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-customer-balance">
+                <a>api/customer/balance</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-customer-money-request">
+                <a>customer/money/requests</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-customer-stake">
+                <a>customer/stake</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-deposit-crypto-addresses">
+                <a>deposit/crypto/addresses</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-deposit-crypto-request">
+                <a>deposit/crypto/request</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-stake-add">
+                <a>stake/add</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-stake-claim">
+                <a>stake/claim</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-stake-campaigns-all">
+                <a>stake/campaigns/all</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-swap-add">
+                <a>swap/add</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-whitelabel-bank">
+                <a>whitelabel/bank</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-withdraw-fiat-add">
+                <a>withdraw/fiat/add</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-withdraw-crypto-add">
+                <a>withdraw/crypto/add</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-settings-currencies-all">
+                <a>settings/currencies/all</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-settings-chains-all">
+                <a>settings/chains/all</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-settings-crypto-fees">
+                <a>settings/crypto/fees</a>
+            </li>
+
+
+        </ul>
+    </div>
+</div>
+<div class="content-page">
+    <div class="content-code"></div>
+    <div class="content">
+        <div class="overflow-hidden content-section" id="content-user-create">
+            <h2>user/create</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/user/create' \
+--data-urlencode 'firstname=' \
+--data-urlencode 'lastname=' \
+--data-urlencode 'email=' \
+--data-urlencode 'password=' \
+--data-urlencode 'token='
+                </code></pre>
+            <p>
+                To create a new user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/user/create</code>
+            </p>
+            <br>
+            <pre><code class="json">
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>firstname</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>lastname</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>String</td>
+                    <td>Valid Email Address</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td>String</td>
+                    <td>Min Length 8</td>
+                </tr>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Whitelabel Token</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-user-authenticate">
+            <h2>user/authenticate</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/user/authenticate' \
+--data-urlencode 'email=' \
+--data-urlencode 'password=' \
+--data-urlencode 'token='
+                </code></pre>
+            <p>
+                To authenticate a new user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/user/authenticate</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>email</td>
+                    <td>String</td>
+                    <td>Valid Email Address</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td>String</td>
+                    <td>Min Length 8</td>
+                </tr>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Whitelabel Token</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-customer-balance-all">
+            <h2>customer/balance/all</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/customer/balance/all' \
+--data-urlencode 'token='
+                </code></pre>
+            <p>
+                To all balances authenticated  user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/customer/balance/all</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-customer-balance">
+            <h2>customer/balance</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/customer/balance' \
+--data-urlencode 'token=' \
+--data-urlencode 'currency_id='
+                </code></pre>
+            <p>
+                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/customer/balance</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                <tr>
+                    <td>currency_id</td>
+                    <td>String</td>
+                    <td>Valid Currency Id</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-customer-money-request">
+            <h2>customer/money/requests/:limit</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/customer/money/requests/:limit' \
+--data-urlencode 'token=' \
+                </code></pre>
+            <p>
+                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/customer/money/requests/:limit</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>PATH VARIABLES</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>limit</td>
+                    <td>number</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-stake">
+            <h2>customer/stake</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/customer/stake' \
+--data-urlencode 'token=' \
+                </code></pre>
+            <p>
+                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/customer/stake</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-deposit-crypto-addresses">
+            <h2>deposit/crypto/addresses</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/deposit/crypto/addresses' \
+--data-urlencode 'token=' \
+--data-urlencode 'currency_id=' \
+--data-urlencode 'chain_id='
+                </code></pre>
+            <p>
+                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/deposit/crypto/addresses</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                <tr>
+                    <td>currency_id</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>chain_id</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-deposit-crypto-request">
+            <h2>deposit/crypto/request</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/deposit/crypto/request' \
+--data-urlencode 'currency_id=' \
+--data-urlencode 'chain_id=' \
+--data-urlencode 'transaction_id=' \
+--data-urlencode 'address=' \
+--data-urlencode 'amount='
+                </code></pre>
+            <p>
+                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/deposit/crypto/request</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                <tr>
+                    <td>currency_id</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>chain_id</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>transaction_id</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>address</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>amount</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-stake-add">
+            <h2>stake/add</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/stake/add' \
+--data-urlencode 'token=' \
+--data-urlencode 'currency_id=' \
+--data-urlencode 'amount='
+                </code></pre>
+            <p>
+                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/stake/add</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                <tr>
+                    <td>currency_id</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>amount</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-stake-claim">
+            <h2>stake/claim</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/stake/claim' \
+--data-urlencode 'token=' \
+--data-urlencode 'currency_id='
+                </code></pre>
+            <p>
+                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/stake/claim</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                <tr>
+                    <td>currency_id</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-stake-campaigns-all">
+            <h2>stake/campaigns/all</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/stake/campaigns/all' \
+--data-urlencode 'token=' \
+                </code></pre>
+            <p>
+                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/stake/campaigns/all</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-swap-add">
+            <h2>swap/add</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/swap/add' \
+--data-urlencode 'token=' \
+--data-urlencode 'selling_currency_id=' \
+--data-urlencode 'selling_amount=' \
+--data-urlencode 'buying_currency_id=' \
+--data-urlencode 'buying_amount=' \
+--data-urlencode 'price='
+                </code></pre>
+            <p>
+                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/swap/add</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                <tr>
+                    <td>selling_currency_id</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>selling_amount</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>buying_currency_id</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>buying_amount</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>price</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-whitelabel-bank">
+            <h2>whitelabel/bank</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/whitelabel/bank' \
+--data-urlencode 'token=' \
+                </code></pre>
+            <p>
+                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/whitelabel/bank</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-withdraw-fiat-add">
+            <h2>withdraw/fiat/add</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/withdraw/fiat/add' \
+--data-urlencode 'token=' \
+--data-urlencode 'currency_id=' \
+--data-urlencode 'chain_id=' \
+--data-urlencode 'amount=' \
+--data-urlencode 'address='
+                </code></pre>
+            <p>
+                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/withdraw/fiat/add</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                <tr>
+                    <td>currency_id</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>chain_id</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>amount</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>address</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-withdraw-crypto-add">
+            <h2>withdraw/crypto/add</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/withdraw/crypto/add' \
+--data-urlencode 'token=' \
+--data-urlencode 'currency_id=' \
+--data-urlencode 'chain_id=' \
+--data-urlencode 'amount=' \
+--data-urlencode 'address='
+                </code></pre>
+            <p>
+                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/withdraw/crypto/add</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                <tr>
+                    <td>currency_id</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>chain_id</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>amount</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>address</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-settings-currencies-all">
+            <h2>settings/currencies/all</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/settings/currencies/all' \
+--data-urlencode 'token=' \
+                </code></pre>
+            <p>
+                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/settings/currencies/all</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-settings-chains-all">
+            <h2>settings/chains/all</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/settings/chains/all' \
+--data-urlencode 'token=' \
+                </code></pre>
+            <p>
+                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/settings/chains/all</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="overflow-hidden content-section" id="content-settings-crypto-fees">
+            <h2>settings/crypto/fees</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/api/settings/crypto/fees' \
+--data-urlencode 'token=' \
+                </code></pre>
+            <p>
+                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/api/settings/crypto/fees</code>
+            </p>
+            <br>
+            <pre><code class="json">
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td>Valid Client API Token</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="content-code"></div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
