@@ -47,7 +47,7 @@
                 <a>customer/balance/all</a>
             </li>
             <li class="scroll-to-link" data-target="content-customer-balance">
-                <a>api/customer/balance</a>
+                <a>customer/balance</a>
             </li>
             <li class="scroll-to-link" data-target="content-customer-money-request">
                 <a>customer/money/requests</a>
@@ -210,7 +210,7 @@ curl --location 'https://{{host}}:{{port}}/api/customer/balance/all' \
 --data-urlencode 'token='
                 </code></pre>
             <p>
-                To all balances authenticated  user you need to make a POST call to the following url :<br>
+                To get all balances you need to make a POST call to the following url : :<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/customer/balance/all</code>
             </p>
             <br>
@@ -245,7 +245,7 @@ curl --location 'https://{{host}}:{{port}}/api/customer/balance' \
 --data-urlencode 'currency_id='
                 </code></pre>
             <p>
-                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                To get balances on given currency_id you need to make a POST call to the following url  :<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/customer/balance</code>
             </p>
             <br>
@@ -284,7 +284,7 @@ curl --location 'https://{{host}}:{{port}}/api/customer/money/requests/:limit' \
 --data-urlencode 'token=' \
                 </code></pre>
             <p>
-                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                To get limited money requests  you need to make a POST call to the following url :<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/customer/money/requests/:limit</code>
             </p>
             <br>
@@ -335,7 +335,7 @@ curl --location 'https://{{host}}:{{port}}/api/customer/stake' \
 --data-urlencode 'token=' \
                 </code></pre>
             <p>
-                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                To get stakes you need to make a POST call to the following url ::<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/customer/stake</code>
             </p>
             <br>
@@ -371,7 +371,7 @@ curl --location 'https://{{host}}:{{port}}/api/deposit/crypto/addresses' \
 --data-urlencode 'chain_id='
                 </code></pre>
             <p>
-                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                To get crypto addresses given currency  and chain authenticated user you need to make a POST call to the following url :<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/deposit/crypto/addresses</code>
             </p>
             <br>
@@ -419,7 +419,7 @@ curl --location 'https://{{host}}:{{port}}/api/deposit/crypto/request' \
 --data-urlencode 'amount='
                 </code></pre>
             <p>
-                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                To get  given currency you need to make a POST call to the following url :<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/deposit/crypto/request</code>
             </p>
             <br>
@@ -480,7 +480,7 @@ curl --location 'https://{{host}}:{{port}}/api/stake/add' \
 --data-urlencode 'amount='
                 </code></pre>
             <p>
-                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                To add stake given currency you need to make a POST call to the following url :<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/stake/add</code>
             </p>
             <br>
@@ -525,7 +525,7 @@ curl --location 'https://{{host}}:{{port}}/api/stake/claim' \
 --data-urlencode 'currency_id='
                 </code></pre>
             <p>
-                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                To claim stake given currency you need to make a POST call to the following url :<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/stake/claim</code>
             </p>
             <br>
@@ -564,7 +564,7 @@ curl --location 'https://{{host}}:{{port}}/api/stake/campaigns/all' \
 --data-urlencode 'token=' \
                 </code></pre>
             <p>
-                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                To get all stake campaigns you need to make a POST call to the following url :<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/stake/campaigns/all</code>
             </p>
             <br>
@@ -603,7 +603,7 @@ curl --location 'https://{{host}}:{{port}}/api/swap/add' \
 --data-urlencode 'price='
                 </code></pre>
             <p>
-                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                To add swap you need to make a POST call to the following url :<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/swap/add</code>
             </p>
             <br>
@@ -662,7 +662,7 @@ curl --location 'https://{{host}}:{{port}}/api/whitelabel/bank' \
 --data-urlencode 'token=' \
                 </code></pre>
             <p>
-                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                To add bank to whitelabel you need to make a POST call to the following url :<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/whitelabel/bank</code>
             </p>
             <br>
@@ -700,7 +700,7 @@ curl --location 'https://{{host}}:{{port}}/api/withdraw/fiat/add' \
 --data-urlencode 'address='
                 </code></pre>
             <p>
-                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                To add fiat withdraw you need to make a POST call to the following url :<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/withdraw/fiat/add</code>
             </p>
             <br>
@@ -758,7 +758,7 @@ curl --location 'https://{{host}}:{{port}}/api/withdraw/crypto/add' \
 --data-urlencode 'address='
                 </code></pre>
             <p>
-                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                To add crypto withdraw you need to make a POST call to the following url :<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/withdraw/crypto/add</code>
             </p>
             <br>
@@ -812,7 +812,7 @@ curl --location 'https://{{host}}:{{port}}/api/settings/currencies/all' \
 --data-urlencode 'token=' \
                 </code></pre>
             <p>
-                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                To get all currencies you need to make a POST call to the following url :<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/settings/currencies/all</code>
             </p>
             <br>
@@ -846,7 +846,7 @@ curl --location 'https://{{host}}:{{port}}/api/settings/chains/all' \
 --data-urlencode 'token=' \
                 </code></pre>
             <p>
-                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                To get all chains you need to make a POST call to the following url :<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/settings/chains/all</code>
             </p>
             <br>
@@ -880,7 +880,7 @@ curl --location 'https://{{host}}:{{port}}/api/settings/crypto/fees' \
 --data-urlencode 'token=' \
                 </code></pre>
             <p>
-                To balance given currency authenticated user you need to make a POST call to the following url :<br>
+                To get crypto fees you need to make a POST call to the following url :<br>
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/settings/crypto/fees</code>
             </p>
             <br>
