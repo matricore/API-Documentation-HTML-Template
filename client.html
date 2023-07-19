@@ -878,9 +878,36 @@ curl --location 'https://{{host}}:{{port}}/api/stake/claim' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/stake/claim</code>
             </p>
             <br>
-            <pre><code class="json">
-
+            <pre><code class="bash">
+# Here is a curl example
+curl --location 'https://{{host}}:{{port}}/user/authenticate' \
+--data-urlencode 'email=' \
+--data-urlencode 'password=' \
+--data-urlencode 'token='
                 </code></pre>
+            <p>
+                To authenticate a new user you need to make a POST call to the following url :<br>
+                <code class="higlighted break-word">https://{{host}}:{{port}}/user/authenticate</code>
+            </p>
+            <br>
+            <pre>
+                <code class="json">
+# Example Result Success:
+
+{
+    "result": 1
+}            </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "result": 0,
+    "error": "Whitelabel ID Missing"
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
