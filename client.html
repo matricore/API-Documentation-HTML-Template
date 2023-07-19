@@ -115,8 +115,30 @@ curl --location 'https://{{host}}:{{port}}/user/create' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/user/create</code>
             </p>
             <br>
-            <pre><code class="json">
-                </code></pre>
+            <pre>
+                <code class="json">
+# Example Result Success:
+
+{
+    "success": true,
+    "user": {
+        "id": 26,
+        "email": "johndoe@mail.com",
+        "whitelabel_id": 1
+    }
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+     success: false,
+        message: 'User with this email johndoe@mail.com already exists.'
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -170,9 +192,36 @@ curl --location 'https://{{host}}:{{port}}/user/authenticate' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/user/authenticate</code>
             </p>
             <br>
-            <pre><code class="json">
+            <pre>
+                <code class="json">
+# Example Result Success:
 
-                </code></pre>
+{
+    "success": true,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI2LCJlbWFpbCI6ImpvaG5kb2V...",
+    "customer": {
+        "id": 26,
+        "firstname": "John",
+        "lastname": "Doe",
+        "email": "johndoe@mail.com",
+        "whitelabel_id": 1,
+        "twhitelabels": {
+            "name": "W3 Labs"
+        }
+    }
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "result": 0,
+    "error": "Whitelabel ID Missing"
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -214,9 +263,69 @@ curl --location 'https://{{host}}:{{port}}/api/customer/balance/all' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/customer/balance/all</code>
             </p>
             <br>
-            <pre><code class="json">
+            <pre>
+                <code class="json">
+# Example Result Success:
 
-                </code></pre>
+{
+    "result": 1,
+    "data": [
+        {
+            "_sum": {
+                "balance": "0.52856239"
+            },
+            "currency_id": 1
+        },
+        {
+            "_sum": {
+                "balance": "0.002"
+            },
+            "currency_id": 2
+        },
+        {
+            "_sum": {
+                "balance": "719.41667126"
+            },
+            "currency_id": 3
+        },
+        {
+            "_sum": {
+                "balance": "5.04217705"
+            },
+            "currency_id": 4
+        },
+        {
+            "_sum": {
+                "balance": "236.13401622"
+            },
+            "currency_id": 5
+        },
+        {
+            "_sum": {
+                "balance": "50.61325045"
+            },
+            "currency_id": 13
+        },
+        {
+            "_sum": {
+                "balance": "10.82164721"
+            },
+            "currency_id": 14
+        }
+    ]
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "result": 0,
+    "error": "Whitelabel ID Missing"
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -249,9 +358,33 @@ curl --location 'https://{{host}}:{{port}}/api/customer/balance' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/customer/balance</code>
             </p>
             <br>
-            <pre><code class="json">
+            <pre>
+                <code class="json">
+# Example Result Success:
 
-                </code></pre>
+{
+    "result": 1,
+    "data": [
+        {
+            "_sum": {
+                "balance": "0.52856239"
+            },
+            "currency_id": 1
+        }
+    ]
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "result": 0,
+    "error": "Whitelabel ID Missing"
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -288,9 +421,72 @@ curl --location 'https://{{host}}:{{port}}/api/customer/money/requests/:limit' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/customer/money/requests/:limit</code>
             </p>
             <br>
-            <pre><code class="json">
+            <pre>
+                <code class="json">
+# Example Result Success:
 
-                </code></pre>
+{
+    "result": 1,
+    "data": [
+        {
+            "currency_id": 1,
+            "transaction_id": null,
+            "amount": "0.1",
+            "created_at": "2023-05-29T00:19:00.000Z",
+            "type": 2,
+            "network_id": 1,
+            "status": 1
+        },
+        {
+            "currency_id": 5,
+            "transaction_id": null,
+            "amount": "10",
+            "created_at": "2023-05-29T00:17:01.000Z",
+            "type": 2,
+            "network_id": 0,
+            "status": 1
+        },
+        {
+            "currency_id": 5,
+            "transaction_id": null,
+            "amount": "50",
+            "created_at": "2023-05-28T21:32:14.000Z",
+            "type": 2,
+            "network_id": 0,
+            "status": 1
+        },
+        {
+            "currency_id": 3,
+            "transaction_id": null,
+            "amount": "100",
+            "created_at": "2023-05-28T21:28:32.000Z",
+            "type": 2,
+            "network_id": 4,
+            "status": 1
+        },
+        {
+            "currency_id": 5,
+            "transaction_id": null,
+            "amount": "100",
+            "created_at": "2023-05-28T20:37:33.000Z",
+            "type": 2,
+            "network_id": 0,
+            "status": 1
+        }
+    ]
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "result": 0,
+    "error": "Whitelabel ID Missing"
+}
+                </code>
+            </pre>
             <h4>PATH VARIABLES</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -327,7 +523,7 @@ curl --location 'https://{{host}}:{{port}}/api/customer/money/requests/:limit' \
             </table>
         </div>
 
-        <div class="overflow-hidden content-section" id="content-stake">
+        <div class="overflow-hidden content-section" id="content-customer-stake">
             <h2>customer/stake</h2>
             <pre><code class="bash">
 # Here is a curl example
@@ -339,9 +535,101 @@ curl --location 'https://{{host}}:{{port}}/api/customer/stake' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/customer/stake</code>
             </p>
             <br>
-            <pre><code class="json">
 
-                </code></pre>
+            <pre>
+                <code class="json">
+# Example Result Success:
+
+{
+    "result": 1,
+    "data": [
+        {
+            "balance": "0.52856239",
+            "staking_balance": 0,
+            "created_at": null,
+            "currency_id": 1,
+            "customer_stakings": [],
+            "apy": "0.7"
+        },
+        {
+            "balance": "0.002",
+            "staking_balance": 0,
+            "created_at": null,
+            "currency_id": 2,
+            "customer_stakings": [],
+            "apy": "2"
+        },
+        {
+            "balance": "719.41667126",
+            "staking_balance": "100",
+            "created_at": "2023-05-30T10:44:16.000Z",
+            "currency_id": 3,
+            "customer_stakings": [
+                {
+                    "created_at": "2023-05-30T10:44:16.000Z",
+                    "amount": "100",
+                    "currency_id": 3
+                }
+            ],
+            "apy": "4"
+        },
+        {
+            "balance": "5.04217705",
+            "staking_balance": 0,
+            "created_at": null,
+            "currency_id": 4,
+            "customer_stakings": [],
+            "apy": "2"
+        },
+        {
+            "balance": "236.13401622",
+            "staking_balance": 0,
+            "created_at": null,
+            "currency_id": 5,
+            "customer_stakings": [],
+            "apy": "0.01"
+        },
+        {
+            "balance": "50.61325045",
+            "staking_balance": "109",
+            "created_at": "2023-05-29T00:42:46.000Z",
+            "currency_id": 13,
+            "customer_stakings": [
+                {
+                    "created_at": "2023-05-29T00:42:46.000Z",
+                    "amount": "100",
+                    "currency_id": 13
+                },
+                {
+                    "created_at": "2023-05-29T00:43:02.000Z",
+                    "amount": "9",
+                    "currency_id": 13
+                }
+            ],
+            "apy": "4"
+        },
+        {
+            "balance": "10.82164721",
+            "staking_balance": 0,
+            "created_at": null,
+            "currency_id": 14,
+            "customer_stakings": [],
+            "apy": "3"
+        }
+    ]
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "result": 0,
+    "error": "Whitelabel ID Missing"
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -375,9 +663,30 @@ curl --location 'https://{{host}}:{{port}}/api/deposit/crypto/addresses' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/deposit/crypto/addresses</code>
             </p>
             <br>
-            <pre><code class="json">
+            <pre>
+                <code class="json">
+# Example Result Success:
 
-                </code></pre>
+{
+    "result": 1,
+    "data": {
+        "currency_id": 1,
+        "address": "bc1qk9kghyqwppc895gz9t407nff06ccccccc5",
+        "destination_tag": null
+    }
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "result": 0,
+    "error": "Whitelabel ID Missing"
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -423,9 +732,32 @@ curl --location 'https://{{host}}:{{port}}/api/deposit/crypto/request' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/deposit/crypto/request</code>
             </p>
             <br>
-            <pre><code class="json">
+            <pre>
+                <code class="json">
+# Example Result Success:
 
-                </code></pre>
+{
+    "result": 1,
+    "data": {
+        "currency_id": 1,
+        "address": "bc1qk9kghyqwppc895gz9t407nff06ccccccc5",
+        "destination_tag": null
+    }
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "status": 0,
+    "type": "accesstoken",
+    "description": null,
+    "errormessage": "Access Token JWT Invalid Signature"
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -484,9 +816,26 @@ curl --location 'https://{{host}}:{{port}}/api/stake/add' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/stake/add</code>
             </p>
             <br>
-            <pre><code class="json">
 
-                </code></pre>
+            <pre>
+                <code class="json">
+# Example Result Success:
+
+{
+    "result": 1
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+ {
+            "result": 0,
+            "error": "balance not sufficent"
+ }
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -568,9 +917,55 @@ curl --location 'https://{{host}}:{{port}}/api/stake/campaigns/all' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/stake/campaigns/all</code>
             </p>
             <br>
-            <pre><code class="json">
+            <pre>
+                <code class="json">
+# Example Result Success:
 
-                </code></pre>
+{
+    "result": 1,
+    "data": [
+        {
+            "currency_id": 1,
+            "apy": "0.7"
+        },
+        {
+            "currency_id": 2,
+            "apy": "2"
+        },
+        {
+            "currency_id": 3,
+            "apy": "4"
+        },
+        {
+            "currency_id": 4,
+            "apy": "2"
+        },
+        {
+            "currency_id": 5,
+            "apy": "0.01"
+        },
+        {
+            "currency_id": 13,
+            "apy": "4"
+        },
+        {
+            "currency_id": 14,
+            "apy": "3"
+        }
+    ]
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "result": 0,
+    "error": "Whitelabel ID Missing"
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -607,9 +1002,26 @@ curl --location 'https://{{host}}:{{port}}/api/swap/add' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/swap/add</code>
             </p>
             <br>
-            <pre><code class="json">
+            <pre>
+                <code class="json">
+# Example Result Success:
 
-                </code></pre>
+{
+    "result": 1,
+    "swap_id": 41
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "result": 0,
+    "error": "Whitelabel ID Missing"
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -666,9 +1078,33 @@ curl --location 'https://{{host}}:{{port}}/api/whitelabel/bank' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/whitelabel/bank</code>
             </p>
             <br>
-            <pre><code class="json">
+            <pre>
+                <code class="json">
+# Example Result Success:
 
-                </code></pre>
+{
+    "result": 1,
+    "data": {
+        "bank_id": 1,
+        "account_name": "W3 Labs A.Ş.",
+        "iban": "TR00 0000 0000 0000 0000 00",
+        "tbanks": {
+            "name": "Adabank A.Ş."
+        }
+    }
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "result": 0,
+    "error": "Whitelabel ID Missing"
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -704,9 +1140,26 @@ curl --location 'https://{{host}}:{{port}}/api/withdraw/fiat/add' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/withdraw/fiat/add</code>
             </p>
             <br>
-            <pre><code class="json">
+            <pre>
+                <code class="json">
+# Example Result Success:
 
-                </code></pre>
+{
+    "result": 0,
+    "status": 1
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "result": 0,
+    "error": "Whitelabel ID Missing"
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -762,9 +1215,26 @@ curl --location 'https://{{host}}:{{port}}/api/withdraw/crypto/add' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/withdraw/crypto/add</code>
             </p>
             <br>
-            <pre><code class="json">
+            <pre>
+                <code class="json">
+# Example Result Success:
 
-                </code></pre>
+{
+    "result": 0,
+    "status": 1
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "result": 0,
+    "error": "Whitelabel ID Missing"
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -816,9 +1286,94 @@ curl --location 'https://{{host}}:{{port}}/api/settings/currencies/all' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/settings/currencies/all</code>
             </p>
             <br>
-            <pre><code class="json">
+            <pre>
+                <code class="json">
+# Example Result Success:
 
-                </code></pre>
+{
+    "result": 0,
+    "status": 1,
+    "data": [
+        {
+            "id": 1,
+            "symbol": "BTC",
+            "name": "Bitcoin",
+            "type": 2
+        },
+        {
+            "id": 2,
+            "symbol": "ETH",
+            "name": "Ethereum",
+            "type": 2
+        },
+        {
+            "id": 3,
+            "symbol": "AVAX",
+            "name": "Avalanche",
+            "type": 2
+        },
+        {
+            "id": 4,
+            "symbol": "USDT",
+            "name": "Tether",
+            "type": 2
+        },
+        {
+            "id": 5,
+            "symbol": "TRY",
+            "name": "Turkish Lira",
+            "type": 1
+        },
+        {
+            "id": 6,
+            "symbol": "USD",
+            "name": "US Dollar",
+            "type": 1
+        },
+        {
+            "id": 7,
+            "symbol": "EUR",
+            "name": "Euro",
+            "type": 1
+        },
+        {
+            "id": 13,
+            "symbol": "XRP",
+            "name": "Ripple",
+            "type": 2
+        },
+        {
+            "id": 14,
+            "symbol": "MATIC",
+            "name": "Polygon",
+            "type": 2
+        },
+        {
+            "id": 15,
+            "symbol": "XLM",
+            "name": "Stellar",
+            "type": 2
+        },
+        {
+            "id": 16,
+            "symbol": "SOL",
+            "name": "Solana",
+            "type": 2
+        }
+    ]
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "result": 0,
+    "error": "Whitelabel ID Missing"
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -850,9 +1405,68 @@ curl --location 'https://{{host}}:{{port}}/api/settings/chains/all' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/settings/chains/all</code>
             </p>
             <br>
-            <pre><code class="json">
+            <pre>
+                <code class="json">
+# Example Result Success:
 
-                </code></pre>
+{
+    "result": 0,
+    "status": 1,
+    "data": [
+        {
+            "id": 1,
+            "symbol": "BTC-MAINNET",
+            "name": "BTC Mainnet"
+        },
+        {
+            "id": 2,
+            "symbol": "ERC-20",
+            "name": "ERC-20"
+        },
+        {
+            "id": 3,
+            "symbol": "X-CHAIN",
+            "name": "X-CHAIN"
+        },
+        {
+            "id": 4,
+            "symbol": "C-CHAIN",
+            "name": "C-CHAIN"
+        },
+        {
+            "id": 5,
+            "symbol": "XRP-LEDGER",
+            "name": "XRP Ledger"
+        },
+        {
+            "id": 6,
+            "symbol": "POLYGON",
+            "name": "Polygon"
+        },
+        {
+            "id": 10,
+            "symbol": "STELLAR",
+            "name": "XLM Network"
+        },
+        {
+            "id": 11,
+            "symbol": "SOLANA",
+            "name": "Solana"
+        }
+    ]
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "result": 0,
+    "error": "Whitelabel ID Missing"
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
@@ -884,9 +1498,27 @@ curl --location 'https://{{host}}:{{port}}/api/settings/crypto/fees' \
                 <code class="higlighted break-word">https://{{host}}:{{port}}/api/settings/crypto/fees</code>
             </p>
             <br>
-            <pre><code class="json">
+            <pre>
+                <code class="json">
+# Example Result Success:
 
-                </code></pre>
+{
+    "result": 0,
+    "status": 1,
+    "data": []
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="json">
+# Example Result Error:
+
+{
+    "result": 0,
+    "error": "Whitelabel ID Missing"
+}
+                </code>
+            </pre>
             <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
